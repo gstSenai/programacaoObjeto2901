@@ -7,9 +7,10 @@ public class loja {
     public static void main(String[] args) {
         
     Scanner sc = new Scanner(System.in);
+    Random gerador = new Random();
 
     String nome, cidade, bairro, rua, roupa, acessorios, outro, email;
-    int numero, numCasa, loja, carrinho = 0, cadastro, metodo, prazo, valorPrazo, precoTotal = 0, removerCarrinho, codVerif, codVerif2[] = new int[5];
+    int numero, numCasa, loja, carrinho = 0, cadastro, metodo, prazo, valorPrazo, precoTotal = 0, removerCarrinho, codVerif, codVerif2 = 0, estoqCel;
     boolean y = false;
 
     System.out.println ( "Deseja fazer cadastro(DIGITE O NUMERO): " +
@@ -37,32 +38,14 @@ public class loja {
                 System.out.println ( "E-mail VALIDO, Código Enviado!!" );
                 y = true;
             }
-
-            Random gerador = new Random();
-
             System.out.print ( "O SEU CÓDIGO PARA VERFICAÇÃO É: " );
 
             for(int i = 0; i < 5; i ++){
 
-                System.out.print( codVerif2[i] = gerador.nextInt(10));
+                System.out.print( codVerif2 = gerador.nextInt(10));
     
             }
-            System.out.println ( "\nDigite seu Código: " );
-            codVerif = sc.nextInt();
-
-            for(int v = 0; v < 5; v ++ ){
-
-            if (codVerif == codVerif2[v]){
-
-                System.out.println("CÓDIGO VÁLIDO");
-
-            }
-            else{
-
-                System.err.println("CÓDIGO INVÁLIDO");
-
-             }
-            }
+           
         }
         System.out.println ( " " );
 
@@ -117,7 +100,8 @@ public class loja {
                 System.out.println ( "Nome: Iphone 13" );
                 System.out.println ( "Preço: R$ 4000,00" );
                 System.out.println ( "Descrição: Este celular tem 128 gb, 4 memória ram ");
-                System.out.println( "Deseja adicionar ao carrinho? "+
+                System.out.println ( "O estoque de celular é de: " + gerador.nextInt(10));
+                System.out.println ( "Deseja adicionar ao carrinho? "+
                                     "\n1-SIM"+
                                     "\n2-NÃO:");
                 loja = sc.nextInt();
